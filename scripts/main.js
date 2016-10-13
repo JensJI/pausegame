@@ -1,4 +1,10 @@
-window.baseurl = '/';
+/**
+ * If pausegame-folder is not localized together with
+ * html page, change here.
+ * 
+ * @type String
+ */
+window.baseurl = '';
 
 /**
  * Initalize game
@@ -153,12 +159,12 @@ var start_map = function() {
     
     var $content = $('.map > div'); 
     
+    $content.animate({marginLeft: "-=7000"}, 30000, 'linear');
+    
     window.start_map_timer = setInterval(function() {
-        var current_margin_left = $content.css('margin-left');
-        $content.css('margin-left', parseInt(current_margin_left)-10);
         count_point();
         check_danger();
-    }, 40);
+    }, 60);
     
 };
 
@@ -169,6 +175,7 @@ var start_map = function() {
  */
 var stop_map = function() {
     
+    $('.map > div').stop();
     clearInterval(window.start_map_timer); 
     
 };
