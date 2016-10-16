@@ -159,6 +159,7 @@ var start_map = function() {
     
     var $content = $('.map > div'); 
     
+    $.fx.interval = 60;
     $content.animate({marginLeft: "-=7000"}, 30000, 'linear');
     
     window.start_map_timer = setInterval(function() {
